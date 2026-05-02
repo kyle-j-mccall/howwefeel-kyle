@@ -10,6 +10,7 @@ export type RootStackParamList = {
   };
   Activity: { activityId: string };
   ActivityLibrary: { fromPostLog?: boolean } | undefined;
+  JournalEntry: { logId: string };
 };
 
 export type BottomTabParamList = {

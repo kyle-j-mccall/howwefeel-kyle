@@ -6,6 +6,7 @@ import { LogScreen } from '../screens/LogScreen';
 import { LogContextScreen } from '../screens/LogContextScreen';
 import { ActivityLibraryScreen } from '../screens/ActivityLibraryScreen';
 import { ActivityScreen } from '../screens/ActivityScreen';
+import { JournalEntryScreen } from '../screens/JournalEntryScreen';
 import { useTheme } from '../theme';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -55,6 +56,11 @@ export function RootNavigator() {
             presentation: 'modal',
             contentStyle: { backgroundColor: colors.background },
           }}
+        />
+        <Stack.Screen
+          name="JournalEntry"
+          component={JournalEntryScreen}
+          options={{ contentStyle: { backgroundColor: colors.background } }}
         />
       </Stack.Navigator>
     </NavigationContainer>
