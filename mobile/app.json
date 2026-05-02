@@ -15,7 +15,8 @@
       "backgroundColor": "#0F0F14"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.anonymous.howwefeel"
     },
     "android": {
       "adaptiveIcon": {
