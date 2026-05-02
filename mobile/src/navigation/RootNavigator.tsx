@@ -20,6 +20,7 @@ const linking: LinkingOptions<RootStackParamList> = {
       LogContext: 'log/context',
       ActivityLibrary: 'activities',
       Activity: 'activity/:activityId',
+      JournalEntry: 'journal/:logId',
     },
   },
 };

@@ -11,6 +11,7 @@ interface LogState {
   logs: EmotionLog[];
   pendingActivitySuggestion: boolean;
   addLog: (log: EmotionLog) => void;
+  updateLog: (id: string, updates: Partial<EmotionLog>) => void;
   removeLog: (id: string) => void;
   clearActivitySuggestion: () => void;
 }
@@ -24,6 +25,10 @@ export const useLogStore = create<LogState>((set) => ({
     set((state) => ({
       logs: [log, ...state.logs],
       pendingActivitySuggestion: shouldSuggestActivity(log),
+    })),
+  updateLog: (id, updates) =>
+    set((state) => ({
+      logs: state.logs.map((l) => (l.id === id ? { ...l, ...updates } : l)),
     })),
   removeLog: (id) =>
     set((state) => ({ logs: state.logs.filter((l) => l.id !== id) })),
