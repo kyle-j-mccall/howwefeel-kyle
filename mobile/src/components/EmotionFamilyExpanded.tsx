@@ -44,7 +44,7 @@ export function EmotionFamilyExpanded({ family, selectedLabel, onSelect }: Props
                 styles.chipText,
                 {
                   fontSize: typography.sizes.md,
-                  color: isSelected ? '#fff' : colors.text,
+                  color: isSelected ? colors.textOnPrimary : colors.text,
                   fontWeight: isSelected ? '600' : '400',
                 },
               ]}

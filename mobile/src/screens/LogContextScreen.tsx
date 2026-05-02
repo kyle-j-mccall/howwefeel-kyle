@@ -138,7 +138,7 @@ export function LogContextScreen({ navigation, route }: Props) {
         ]}
         onPress={handleSave}
       >
-        <Text style={[styles.saveText, { color: '#fff', fontSize: typography.sizes.lg }]}>
+        <Text style={[styles.saveText, { color: colors.textOnPrimary, fontSize: typography.sizes.lg }]}>
           Save
         </Text>
       </Pressable>
