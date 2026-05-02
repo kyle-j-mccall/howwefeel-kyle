@@ -11,6 +11,7 @@ export const colors = {
   textSecondary: '#9999AA',
   textTertiary: '#5C5C6E',
   textInverse: '#0F0F14',
+  textOnPrimary: '#FFFFFF',
 
   primary: '#7B6BFF',
   primaryMuted: 'rgba(123,107,255,0.15)',

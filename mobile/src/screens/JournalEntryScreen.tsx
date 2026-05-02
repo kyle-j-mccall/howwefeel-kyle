@@ -114,7 +114,7 @@ export function JournalEntryScreen({ route, navigation }: Props) {
           <View style={styles.headerActions}>
             {isEditing ? (
               <Pressable onPress={handleSave} style={[styles.actionBtn, { backgroundColor: colors.primary, borderRadius: radii.md, paddingHorizontal: spacing[4], paddingVertical: spacing[2] }]}>
-                <Text style={[{ color: colors.textInverse, fontSize: typography.sizes.sm, fontWeight: typography.weights.semibold }]}>
+                <Text style={[{ color: colors.textOnPrimary, fontSize: typography.sizes.sm, fontWeight: typography.weights.semibold }]}>
                   Save
                 </Text>
               </Pressable>

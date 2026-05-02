@@ -94,7 +94,7 @@ export function ActivityScreen({ navigation, route }: Props) {
           onPress={handleNext}
           style={[styles.nextButton, { backgroundColor: colors.primary, borderRadius: radii.md }]}
         >
-          <Text style={[styles.nextButtonText, { color: colors.textInverse, fontSize: typography.sizes.md }]}>
+          <Text style={[styles.nextButtonText, { color: colors.textOnPrimary, fontSize: typography.sizes.md }]}>
             {isLastStep ? 'Done' : 'Next'}
           </Text>
         </Pressable>

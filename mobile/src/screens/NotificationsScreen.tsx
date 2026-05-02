@@ -67,7 +67,7 @@ export function NotificationsScreen({ navigation }: Props) {
                   style={[
                     styles.segmentLabel,
                     {
-                      color: active ? '#FFFFFF' : colors.textSecondary,
+                      color: active ? colors.textOnPrimary : colors.textSecondary,
                       fontSize: typography.sizes.sm,
                     },
                   ]}
@@ -163,7 +163,7 @@ export function NotificationsScreen({ navigation }: Props) {
                   style={[
                     styles.dayLabel,
                     {
-                      color: active ? '#FFFFFF' : colors.textSecondary,
+                      color: active ? colors.textOnPrimary : colors.textSecondary,
                       fontSize: typography.sizes.xs,
                     },
                   ]}

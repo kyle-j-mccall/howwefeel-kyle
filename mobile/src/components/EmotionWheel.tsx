@@ -39,6 +39,7 @@ interface QuadrantProps {
 }
 
 function QuadrantSegment({ family, isSelected, onPress, animate }: QuadrantProps) {
+  const { colors } = useTheme();
   const opacity = useSharedValue(1);
   const animStyle = useAnimatedStyle(() => ({ opacity: opacity.value }));
 
@@ -67,7 +68,7 @@ function QuadrantSegment({ family, isSelected, onPress, animate }: QuadrantProps
       <Pressable style={StyleSheet.absoluteFillObject} onPress={handlePress}>
         {dimmed && <View style={styles.dimOverlay} />}
         <View style={styles.labelContainer}>
-          <Text style={styles.quadrantLabel}>{FAMILY_LABELS[family]}</Text>
+          <Text style={[styles.quadrantLabel, { color: colors.textOnPrimary }]}>{FAMILY_LABELS[family]}</Text>
         </View>
       </Pressable>
     </Animated.View>
@@ -125,7 +126,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   quadrantLabel: {
-    color: '#fff',
     fontSize: 15,
     fontWeight: '600',
   },

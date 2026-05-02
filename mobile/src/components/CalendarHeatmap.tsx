@@ -120,7 +120,7 @@ export function CalendarHeatmap({ logs }: Props) {
                 style={[
                   styles.dayNumber,
                   {
-                    color: dominant ? colors.textInverse : colors.textTertiary,
+                    color: dominant ? colors.textOnPrimary : colors.textTertiary,
                     fontSize: typography.sizes.xs,
                     fontWeight: isToday ? typography.weights.bold : typography.weights.regular,
                   },
