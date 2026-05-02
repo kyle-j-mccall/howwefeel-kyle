@@ -1,0 +1,254 @@
+[
+  {
+    "id": "box-breathing",
+    "name": "Box Breathing",
+    "durationMinutes": 4,
+    "description": "A calming 4-4-4-4 breathing pattern used by Navy SEALs and first responders to reduce stress quickly.",
+    "steps": [
+      { "id": 1, "instruction": "Sit comfortably with your back straight. Place your hands on your knees. Close your eyes or soften your gaze." },
+      { "id": 2, "instruction": "Exhale completely through your mouth, emptying your lungs." },
+      { "id": 3, "instruction": "Inhale slowly through your nose for 4 counts: 1… 2… 3… 4." },
+      { "id": 4, "instruction": "Hold your breath for 4 counts: 1… 2… 3… 4." },
+      { "id": 5, "instruction": "Exhale slowly through your mouth for 4 counts: 1… 2… 3… 4." },
+      { "id": 6, "instruction": "Hold empty for 4 counts: 1… 2… 3… 4. Repeat the cycle 3 more times." }
+    ]
+  },
+  {
+    "id": "grounding-54321",
+    "name": "5-4-3-2-1 Grounding",
+    "durationMinutes": 5,
+    "description": "A sensory grounding technique that anchors you to the present moment by engaging all five senses.",
+    "steps": [
+      { "id": 1, "instruction": "Take a slow breath and look around. Name 5 things you can SEE right now — a wall, your hands, a window, anything." },
+      { "id": 2, "instruction": "Name 4 things you can TOUCH. Reach out and feel them — your chair, your clothing, a surface nearby." },
+      { "id": 3, "instruction": "Pause and name 3 things you can HEAR — traffic, your own breathing, background noise." },
+      { "id": 4, "instruction": "Name 2 things you can SMELL. If nothing is obvious, notice the neutral scent of air or your skin." },
+      { "id": 5, "instruction": "Name 1 thing you can TASTE. Take a breath and notice any taste in your mouth. Take another slow breath and return to the moment." }
+    ]
+  },
+  {
+    "id": "deep-breathing",
+    "name": "Deep Belly Breathing",
+    "durationMinutes": 3,
+    "description": "Simple diaphragmatic breathing to activate your parasympathetic nervous system.",
+    "steps": [
+      { "id": 1, "instruction": "Place one hand on your chest and one on your belly. As you breathe, your belly should rise, not your chest." },
+      { "id": 2, "instruction": "Inhale slowly through your nose for 4 seconds, letting your belly expand." },
+      { "id": 3, "instruction": "Exhale slowly through pursed lips for 6 seconds, letting your belly fall. Repeat 6 times." }
+    ]
+  },
+  {
+    "id": "4-7-8-breathing",
+    "name": "4-7-8 Breathing",
+    "durationMinutes": 5,
+    "description": "Dr. Andrew Weil's relaxation breath that calms the nervous system in minutes.",
+    "steps": [
+      { "id": 1, "instruction": "Sit with your back straight. Place the tip of your tongue behind your upper front teeth and keep it there." },
+      { "id": 2, "instruction": "Exhale completely through your mouth with a whoosh sound." },
+      { "id": 3, "instruction": "Inhale quietly through your nose for 4 counts." },
+      { "id": 4, "instruction": "Hold your breath for 7 counts." },
+      { "id": 5, "instruction": "Exhale completely through your mouth with a whoosh for 8 counts. This is one cycle. Repeat 3 more times." }
+    ]
+  },
+  {
+    "id": "body-scan",
+    "name": "Body Scan",
+    "durationMinutes": 7,
+    "description": "A mindfulness practice that releases tension by bringing awareness to each part of your body.",
+    "steps": [
+      { "id": 1, "instruction": "Lie down or sit comfortably. Close your eyes. Take 3 slow breaths." },
+      { "id": 2, "instruction": "Bring your attention to the top of your head. Notice any sensations — warmth, tingling, or tension. Simply observe." },
+      { "id": 3, "instruction": "Move your awareness down to your face, jaw, and neck. Soften any tightness you notice there." },
+      { "id": 4, "instruction": "Shift to your shoulders, arms, and hands. Let them get heavy and relaxed." },
+      { "id": 5, "instruction": "Move to your chest, belly, and back. With each exhale, let them release." },
+      { "id": 6, "instruction": "Finally, bring attention to your hips, legs, and feet. Breathe gently. Notice your whole body feeling heavier and calmer." }
+    ]
+  },
+  {
+    "id": "progressive-muscle-relaxation",
+    "name": "Progressive Muscle Relaxation",
+    "durationMinutes": 8,
+    "description": "Tense and release muscle groups to release stored physical tension.",
+    "steps": [
+      { "id": 1, "instruction": "Sit or lie comfortably. Take 2 slow breaths to begin." },
+      { "id": 2, "instruction": "Clench your hands into fists, hold for 5 seconds, then release completely. Feel the contrast." },
+      { "id": 3, "instruction": "Scrunch your face tight — forehead, eyes, jaw — hold 5 seconds, then release." },
+      { "id": 4, "instruction": "Shrug your shoulders up to your ears, hold 5 seconds, then drop them completely." },
+      { "id": 5, "instruction": "Tighten your core, hold 5 seconds, release. Arch your back gently, hold 5 seconds, release." },
+      { "id": 6, "instruction": "Tighten your legs and point your toes, hold 5 seconds, then release everything. Rest and breathe slowly." }
+    ]
+  },
+  {
+    "id": "mindful-observation",
+    "name": "Mindful Observation",
+    "durationMinutes": 3,
+    "description": "Focus on a single object to quiet your mind and return to the present.",
+    "steps": [
+      { "id": 1, "instruction": "Pick any object in front of you — a cup, your phone, a plant." },
+      { "id": 2, "instruction": "Look at it as if seeing it for the first time. Notice its shape, color, texture, and edges." },
+      { "id": 3, "instruction": "If your mind wanders, gently return to the object. Keep observing for 2 full minutes without judgment." }
+    ]
+  },
+  {
+    "id": "gratitude-three",
+    "name": "Three Good Things",
+    "durationMinutes": 3,
+    "description": "Shift your mindset by consciously noticing the positive in your day.",
+    "steps": [
+      { "id": 1, "instruction": "Close your eyes or look somewhere soft. Take a breath." },
+      { "id": 2, "instruction": "Think of ONE thing that went okay today — big or small. A warm drink, a kind word, sunlight." },
+      { "id": 3, "instruction": "Think of a SECOND good thing. Let yourself feel a small warmth for it." },
+      { "id": 4, "instruction": "Think of a THIRD good thing. Breathe into gratitude for a moment before returning." }
+    ]
+  },
+  {
+    "id": "self-compassion",
+    "name": "Self-Compassion Break",
+    "durationMinutes": 5,
+    "description": "Dr. Kristin Neff's practice to treat yourself with the kindness you'd offer a friend.",
+    "steps": [
+      { "id": 1, "instruction": "Place a hand on your heart or somewhere soothing. Acknowledge: 'This is a moment of suffering.'" },
+      { "id": 2, "instruction": "Remind yourself: 'Suffering is part of being human. I am not alone in this.'" },
+      { "id": 3, "instruction": "Ask yourself: what would I say to a close friend going through this exact thing?" },
+      { "id": 4, "instruction": "Say those words to yourself now. Quietly or aloud. Let them in." },
+      { "id": 5, "instruction": "Rest with your hand on your heart. Breathe slowly. You deserve kindness too." }
+    ]
+  },
+  {
+    "id": "cold-water-splash",
+    "name": "Cold Water Reset",
+    "durationMinutes": 2,
+    "description": "Splashing cold water activates the dive reflex, slowing your heart rate rapidly.",
+    "steps": [
+      { "id": 1, "instruction": "Go to a sink. Hold cold water in your hands or fill a bowl." },
+      { "id": 2, "instruction": "Lean forward, close your eyes, and splash cold water on your face 3–5 times." },
+      { "id": 3, "instruction": "Pat dry gently. Breathe slowly. Notice how your body feels more alert and calm." }
+    ]
+  },
+  {
+    "id": "tension-release",
+    "name": "Shake It Out",
+    "durationMinutes": 3,
+    "description": "Animals instinctively shake off stress after threat — we can too.",
+    "steps": [
+      { "id": 1, "instruction": "Stand up if you can. Shake your hands loosely for 15 seconds." },
+      { "id": 2, "instruction": "Let the shake travel up your arms, into your shoulders, down your body." },
+      { "id": 3, "instruction": "Bounce gently on your heels for 20 seconds, letting your whole body jiggle." },
+      { "id": 4, "instruction": "Stop and stand still. Notice the tingling aliveness in your body. Take 3 slow breaths." }
+    ]
+  },
+  {
+    "id": "counting-breaths",
+    "name": "Counting Breaths",
+    "durationMinutes": 4,
+    "description": "A simple anchor practice: count breaths from 1 to 10, then start again.",
+    "steps": [
+      { "id": 1, "instruction": "Sit comfortably. Let your breath be natural — don't force it." },
+      { "id": 2, "instruction": "Breathe in. On the exhale, count '1'. Breathe in. Exhale: '2'. Continue to '10'." },
+      { "id": 3, "instruction": "If your mind wanders and you lose count, gently return to '1' without frustration." },
+      { "id": 4, "instruction": "Complete 3–4 full rounds of counting 1 to 10. Let each breath be a small rest." }
+    ]
+  },
+  {
+    "id": "visualization-calm",
+    "name": "Calm Place Visualization",
+    "durationMinutes": 6,
+    "description": "Create a vivid mental sanctuary to retreat to whenever stress peaks.",
+    "steps": [
+      { "id": 1, "instruction": "Close your eyes. Take 3 deep breaths." },
+      { "id": 2, "instruction": "Imagine a place where you feel completely safe and at peace — a beach, a forest, a favorite room." },
+      { "id": 3, "instruction": "See it clearly: the colors, the light, the shapes around you." },
+      { "id": 4, "instruction": "Hear the sounds there — waves, birds, wind, or silence." },
+      { "id": 5, "instruction": "Feel the air on your skin — its temperature, its movement." },
+      { "id": 6, "instruction": "Stay for a minute. When you're ready, take a breath and slowly open your eyes." }
+    ]
+  },
+  {
+    "id": "gentle-stretch",
+    "name": "Neck & Shoulder Release",
+    "durationMinutes": 5,
+    "description": "Stress collects in your neck and shoulders. These gentle stretches release it.",
+    "steps": [
+      { "id": 1, "instruction": "Sit upright. Slowly drop your right ear toward your right shoulder. Hold 20 seconds, breathing." },
+      { "id": 2, "instruction": "Slowly roll your head to center, then drop your left ear to your left shoulder. Hold 20 seconds." },
+      { "id": 3, "instruction": "Drop your chin to your chest gently. Feel the stretch in the back of your neck. Hold 20 seconds." },
+      { "id": 4, "instruction": "Roll your shoulders backward in slow circles 5 times, then forward 5 times." },
+      { "id": 5, "instruction": "Lift both shoulders to your ears, hold 3 seconds, and drop them with a breath out. Repeat 3 times." }
+    ]
+  },
+  {
+    "id": "positive-affirmation",
+    "name": "Grounding Affirmations",
+    "durationMinutes": 3,
+    "description": "Interrupt negative spirals with simple, honest statements of strength.",
+    "steps": [
+      { "id": 1, "instruction": "Take a breath and say slowly: 'I am safe right now.'" },
+      { "id": 2, "instruction": "Take another breath and say: 'I have handled hard moments before.'" },
+      { "id": 3, "instruction": "Say: 'This feeling is temporary. It will pass.'" },
+      { "id": 4, "instruction": "Say: 'I am doing my best and that is enough.'" },
+      { "id": 5, "instruction": "Take one final slow breath. Let the words settle." }
+    ]
+  },
+  {
+    "id": "mindful-walk",
+    "name": "Mindful Walk",
+    "durationMinutes": 5,
+    "description": "Walking slowly with full attention grounds racing thoughts in your body.",
+    "steps": [
+      { "id": 1, "instruction": "Stand and feel your feet on the floor. Take a breath." },
+      { "id": 2, "instruction": "Begin walking slower than usual. With each step, feel your heel, then the ball of your foot, then your toes." },
+      { "id": 3, "instruction": "Notice the small movements that keep you balanced. Your arms, your hips." },
+      { "id": 4, "instruction": "Breathe naturally. If thoughts arrive, return your attention to the sensation of each step." },
+      { "id": 5, "instruction": "Walk for 3 minutes. Return to stillness. Notice how your mind feels quieter." }
+    ]
+  },
+  {
+    "id": "hand-warmth",
+    "name": "Warm Hands Meditation",
+    "durationMinutes": 3,
+    "description": "Directing blood flow into your hands activates the relaxation response.",
+    "steps": [
+      { "id": 1, "instruction": "Sit quietly. Rest your hands face-up on your thighs." },
+      { "id": 2, "instruction": "Close your eyes. Imagine warmth spreading into your palms and fingers — like sitting near a fire." },
+      { "id": 3, "instruction": "With each exhale, imagine that warmth deepening. Let your hands feel heavy and warm." },
+      { "id": 4, "instruction": "Hold this image for 2 minutes. Notice if your hands actually warm slightly. Open your eyes slowly." }
+    ]
+  },
+  {
+    "id": "eye-rest",
+    "name": "Eye Palming",
+    "durationMinutes": 2,
+    "description": "Rest strained eyes and signal safety to your nervous system.",
+    "steps": [
+      { "id": 1, "instruction": "Rub your palms together briskly for 10 seconds to generate warmth." },
+      { "id": 2, "instruction": "Cup your warm palms gently over your closed eyes — no pressure on the eyes themselves." },
+      { "id": 3, "instruction": "Breathe slowly. Let your eyes relax into total darkness. Stay for 60–90 seconds." },
+      { "id": 4, "instruction": "Slowly remove your hands. Let light return gradually. Blink gently. Take a breath." }
+    ]
+  },
+  {
+    "id": "humming-breath",
+    "name": "Humming Exhale",
+    "durationMinutes": 3,
+    "description": "Humming on the exhale activates the vagus nerve for fast calm.",
+    "steps": [
+      { "id": 1, "instruction": "Sit comfortably. Take a normal breath in through your nose." },
+      { "id": 2, "instruction": "On the exhale, hum softly — mmmmm — for the full exhale. Feel the vibration in your chest and face." },
+      { "id": 3, "instruction": "Inhale again. Hum on the exhale. Make the hum as long as comfortable." },
+      { "id": 4, "instruction": "Repeat 6–8 times. With each hum, let your body soften a little more." }
+    ]
+  },
+  {
+    "id": "journaling-prompt",
+    "name": "Feelings Check-In",
+    "durationMinutes": 5,
+    "description": "Writing about emotions helps process them and reduces their intensity.",
+    "steps": [
+      { "id": 1, "instruction": "Find something to write with — phone notes, paper, anything." },
+      { "id": 2, "instruction": "Write: 'Right now I feel ___' and fill it in honestly. Don't edit, just write." },
+      { "id": 3, "instruction": "Write: 'This is probably because ___'. Again, don't judge, just name what comes up." },
+      { "id": 4, "instruction": "Write: 'One small thing that might help me right now is ___'." },
+      { "id": 5, "instruction": "Read what you wrote. Take a breath. You've just processed something real." }
+    ]
+  }
+]
