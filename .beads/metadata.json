@@ -1,7 +1,7 @@
 {
-  "database": "dolt",
   "backend": "dolt",
-  "dolt_mode": "embedded",
-  "dolt_database": "howwefeel",
-  "project_id": "b70ce760-58ad-4788-b606-4a6964ebcba3"
+  "database": "dolt",
+  "dolt_database": "hwf",
+  "dolt_mode": "server",
+  "project_id": "gc-local-1745df5c896ee3a37cffbaaabd4decf5"
 }
