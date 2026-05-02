@@ -1,0 +1,9 @@
+{
+  "name": "howwefeel-kyle",
+  "version": "0.0.1",
+  "private": true,
+  "workspaces": [
+    "mobile",
+    "shared"
+  ]
+}
