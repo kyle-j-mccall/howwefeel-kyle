@@ -3,8 +3,9 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import type { RootStackParamList } from './types';
 import { BottomTabNavigator } from './BottomTabNavigator';
 import { LogScreen } from '../screens/LogScreen';
-import { ActivityScreen } from '../screens/ActivityScreen';
+import { LogContextScreen } from '../screens/LogContextScreen';
 import { ActivityLibraryScreen } from '../screens/ActivityLibraryScreen';
+import { ActivityScreen } from '../screens/ActivityScreen';
 import { useTheme } from '../theme';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -15,13 +16,14 @@ const linking: LinkingOptions<RootStackParamList> = {
     screens: {
       Main: '',
       Log: 'log',
+      LogContext: 'log/context',
       ActivityLibrary: 'activities',
       Activity: 'activity/:activityId',
     },
   },
 };
 
-export function RootNavigator(){
+export function RootNavigator() {
   const { colors } = useTheme();
 
   return (
@@ -35,6 +37,11 @@ export function RootNavigator(){
             presentation: 'modal',
             contentStyle: { backgroundColor: colors.background },
           }}
+        />
+        <Stack.Screen
+          name="LogContext"
+          component={LogContextScreen}
+          options={{ contentStyle: { backgroundColor: colors.background } }}
         />
         <Stack.Screen
           name="ActivityLibrary"
