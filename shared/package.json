@@ -1,0 +1,14 @@
+{
+  "name": "howwefeel-kyle-shared",
+  "version": "0.1.0",
+  "description": "Shared TypeScript types for How We Feel mobile and backend",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  }
+}
