@@ -3,7 +3,7 @@ import type { BottomTabParamList } from './types';
 import { HomeScreen } from '../screens/HomeScreen';
 import { InsightsScreen } from '../screens/InsightsScreen';
 import { JournalScreen } from '../screens/JournalScreen';
-import { SettingsScreen } from '../screens/SettingsScreen';
+import { SettingsStack } from './SettingsStack';
 import { useTheme } from '../theme';
 
 const Tab = createBottomTabNavigator<BottomTabParamList>();
@@ -31,7 +31,7 @@ export function BottomTabNavigator(){
       <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="Insights" component={InsightsScreen} />
       <Tab.Screen name="Journal" component={JournalScreen} />
-      <Tab.Screen name="Settings" component={SettingsScreen} />
+      <Tab.Screen name="Settings" component={SettingsStack} />
     </Tab.Navigator>
   );
 }

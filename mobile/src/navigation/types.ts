@@ -19,3 +19,12 @@ export type BottomTabParamList = {
   Journal: undefined;
   Settings: undefined;
 };
+
+export type SettingsStackParamList = {
+  SettingsMain: undefined;
+  Account: undefined;
+  Data: undefined;
+  Notifications: undefined;
+  Display: undefined;
+  Privacy: undefined;
+};
