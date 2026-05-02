@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tribes - Refined Labeling Interface v2</title>
+    <style>
+        :root {
+            /* Dark Mode Colors */
+            --bg-deep: #121212;
+            --bg-surface: #1E1E1E;
+            --bg-elevated: #2A2A2A;
+            --text-primary: #FAF8F5;
+            --text-secondary: #B0B0B0;
+            --text-tertiary: #6B6B6B;
+            --divider: #333333;
+
+            /* Brand Colors */
+            --primary: #E86A58;
+            --primary-dark: #C4463A;
+            --secondary: #2A9D8F;
+
+            /* Domain Colors */
+            --domain-activity: #F4A261;
+            --domain-social: #E07A9A;
+            --domain-home: #6BAED6;
+            --domain-teachers: #7CB578;
+            --domain-helpers: #E9C46A;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
+            background: #0a0a0a;
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 24px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+        }
+
+        /* Phone Frame */
+        .phone-frame {
+            width: 375px;
+            height: 812px;
+            background: var(--bg-deep);
+            border-radius: 48px;
+            border: 8px solid #2A2A2A;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        /* Status Bar */
+        .status-bar {
+            height: 44px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding: 0 24px 8px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 30px;
+            background: #000;
+            border-radius: 0 0 20px 20px;
+        }
+
+        /* Header */
+        .header {
+            padding: 4px 20px 8px;
+            text-align: center;
+        }
+
+        .header h2 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        /* ========== DOMAIN SELECTOR (Segmented Control) ========== */
+        .domain-selector {
+            display: flex;
+            justify-content: center;
+            gap: 4px;
+            padding: 8px 16px;
+            background: var(--bg-surface);
+            margin: 0 16px;
+            border-radius: 12px;
+        }
+
+        .domain-tab {
+            width: 56px;
+            height: 44px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: 2px solid transparent;
+        }
+
+        .domain-tab:hover {
+            background: rgba(255,255,255,0.05);
+        }
+
+        .domain-tab.active {
+            border-color: currentColor;
+            background: rgba(255,255,255,0.1);
+        }
+
+        .domain-tab .icon {
+            font-size: 20px;
+            margin-bottom: 2px;
+        }
+
+        .domain-tab .label {
+            font-size: 9px;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        .domain-tab.active .label {
+            color: var(--text-primary);
+        }
+
+        .domain-activity-tab { color: var(--domain-activity); }
+        .domain-social-tab { color: var(--domain-social); }
+        .domain-home-tab { color: var(--domain-home); }
+        .domain-teachers-tab { color: var(--domain-teachers); }
+        .domain-helpers-tab { color: var(--domain-helpers); }
+
+        /* ========== RADIAL ZONE (Single Ring) ========== */
+        .radial-zone {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: radial-gradient(circle at center, rgba(244, 162, 97, 0.05) 0%, transparent 60%);
+            margin-top: 8px;
+        }
+
+        /* Single Ring for Labels */
+        .label-ring {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            border-radius: 50%;
+            border: 1px dashed rgba(244, 162, 97, 0.2);
+        }
+
+        /* Sticker Label Style */
+        .label-sticker {
+            position: absolute;
+            padding: 10px 16px;
+            border-radius: 14px;
+            font-size: 14px;
+            font-weight: 500;
+            color: white;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.35);
+            background-image: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 50%);
+        }
+
+        .label-sticker:hover {
+            transform: scale(1.12);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.45), 0 0 24px currentColor;
+        }
+
+        /* Activity domain labels */
+        .label-sticker.activity {
+            background-color: rgba(244, 162, 97, 0.9);
+            border: 1px solid rgba(244, 162, 97, 0.5);
+            color: #1a1a1a;
+        }
+
+        /* Position 12 labels around the ring (clock positions) */
+        .label-pos-12 { top: -18px; left: 50%; transform: translateX(-50%); }
+        .label-pos-1 { top: 8%; right: 12%; }
+        .label-pos-2 { top: 25%; right: -5%; }
+        .label-pos-3 { top: 50%; right: -15%; transform: translateY(-50%); }
+        .label-pos-4 { bottom: 25%; right: -5%; }
+        .label-pos-5 { bottom: 8%; right: 12%; }
+        .label-pos-6 { bottom: -18px; left: 50%; transform: translateX(-50%); }
+        .label-pos-7 { bottom: 8%; left: 12%; }
+        .label-pos-8 { bottom: 25%; left: -8%; }
+        .label-pos-9 { top: 50%; left: -18%; transform: translateY(-50%); }
+        .label-pos-10 { top: 25%; left: -8%; }
+        .label-pos-11 { top: 8%; left: 12%; }
+
+        /* Center - Draggable Contact Token */
+        .contact-token {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(145deg, #3a3a3a, #2a2a2a);
+            border: 3px solid var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: grab;
+            position: relative;
+            z-index: 10;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+            transition: all 0.2s ease;
+        }
+
+        .contact-token:hover {
+            transform: scale(1.08);
+            box-shadow: 0 12px 36px rgba(0,0,0,0.6);
+        }
+
+        .contact-token .initials {
+            font-size: 26px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .drag-hint {
+            position: absolute;
+            bottom: 60px;
+            font-size: 12px;
+            color: var(--text-tertiary);
+            white-space: nowrap;
+        }
+
+        /* ========== DETAIL ZONE ========== */
+        .detail-zone {
+            height: 240px;
+            background: var(--bg-surface);
+            border-top: 1px solid var(--divider);
+            display: flex;
+            flex-direction: column;
+            padding: 12px 12px 8px;
+        }
+
+        /* Three-card carousel */
+        .card-carousel {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            flex: 1;
+        }
+
+        /* Side cards (prev/next) */
+        .side-card {
+            width: 72px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            padding: 8px 4px;
+            border-radius: 12px;
+        }
+
+        .side-card:hover {
+            background: rgba(255,255,255,0.05);
+        }
+
+        .side-card.prev {
+            opacity: 0.35;
+        }
+
+        .side-card.next {
+            opacity: 0.65;
+        }
+
+        .side-card .avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--bg-elevated);
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        .side-card .name {
+            font-size: 10px;
+            color: var(--text-secondary);
+            text-align: center;
+        }
+
+        .side-card .direction {
+            font-size: 9px;
+            color: var(--text-tertiary);
+            margin-top: 2px;
+        }
+
+        /* Current contact card */
+        .current-card {
+            flex: 1;
+            max-width: 170px;
+            background: var(--bg-elevated);
+            border-radius: 16px;
+            padding: 14px 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        .current-card .avatar-large {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: linear-gradient(145deg, #4a4a4a, #3a3a3a);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            border: 2px solid var(--primary);
+        }
+
+        .current-card .contact-name {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 2px;
+        }
+
+        .current-card .last-contact {
+            font-size: 10px;
+            color: var(--text-tertiary);
+            margin-bottom: 10px;
+        }
+
+        /* Assigned labels as sticker chips */
+        .assigned-labels {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            justify-content: center;
+        }
+
+        .label-chip {
+            padding: 4px 9px;
+            border-radius: 8px;
+            font-size: 10px;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        .label-chip.activity {
+            background: rgba(244, 162, 97, 0.9);
+        }
+
+        .label-chip.social {
+            background: rgba(224, 122, 154, 0.9);
+        }
+
+        /* Progress indicator */
+        .progress-bar {
+            margin-top: 8px;
+            text-align: center;
+        }
+
+        .progress-text {
+            font-size: 11px;
+            color: var(--text-secondary);
+        }
+
+        .progress-dots {
+            display: flex;
+            gap: 3px;
+            justify-content: center;
+            margin-top: 4px;
+        }
+
+        .dot {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--divider);
+        }
+
+        .dot.completed {
+            background: var(--secondary);
+        }
+
+        .dot.current {
+            background: var(--primary);
+            width: 16px;
+            border-radius: 3px;
+        }
+
+        /* Home indicator */
+        .home-indicator {
+            width: 134px;
+            height: 5px;
+            background: var(--text-tertiary);
+            border-radius: 3px;
+            margin: 6px auto 0;
+        }
+
+        /* Notes section */
+        .notes {
+            margin-top: 40px;
+            max-width: 600px;
+            padding: 24px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+        }
+
+        .notes h3 {
+            color: var(--primary);
+            margin-bottom: 16px;
+        }
+
+        .notes ul {
+            list-style: none;
+        }
+
+        .notes li {
+            padding: 8px 0;
+            padding-left: 24px;
+            position: relative;
+            color: var(--text-secondary);
+        }
+
+        .notes li::before {
+            content: ">";
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+        }
+
+        .comparison {
+            margin-top: 24px;
+            display: flex;
+            gap: 24px;
+        }
+
+        .comparison-box {
+            flex: 1;
+            padding: 16px;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.03);
+        }
+
+        .comparison-box h4 {
+            color: var(--text-tertiary);
+            font-size: 12px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .comparison-box.new h4 {
+            color: var(--secondary);
+        }
+
+        .comparison-box p {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tribes - Labeling Interface v2</h1>
+    <p class="subtitle">Domains as Segmented Control + Single-Ring Radial</p>
+
+    <div class="phone-frame">
+        <div class="notch"></div>
+        <div class="status-bar">
+            <span>9:41</span>
+            <span>100%</span>
+        </div>
+
+        <div class="header">
+            <h2>Label Your People</h2>
+        </div>
+
+        <!-- DOMAIN SELECTOR (Segmented Control) -->
+        <div class="domain-selector">
+            <div class="domain-tab domain-activity-tab active">
+                <span class="icon">&#127939;</span>
+                <span class="label">Activity</span>
+            </div>
+            <div class="domain-tab domain-social-tab">
+                <span class="icon">&#127881;</span>
+                <span class="label">Social</span>
+            </div>
+            <div class="domain-tab domain-home-tab">
+                <span class="icon">&#127968;</span>
+                <span class="label">Home</span>
+            </div>
+            <div class="domain-tab domain-teachers-tab">
+                <span class="icon">&#127891;</span>
+                <span class="label">Teachers</span>
+            </div>
+            <div class="domain-tab domain-helpers-tab">
+                <span class="icon">&#128295;</span>
+                <span class="label">Helpers</span>
+            </div>
+        </div>
+
+        <!-- RADIAL ZONE (Single Ring) -->
+        <div class="radial-zone">
+            <!-- Single Ring: Label Stickers -->
+            <div class="label-ring">
+                <div class="label-sticker activity label-pos-12">Hiking</div>
+                <div class="label-sticker activity label-pos-1">Running</div>
+                <div class="label-sticker activity label-pos-2">Gym</div>
+                <div class="label-sticker activity label-pos-3">Yoga</div>
+                <div class="label-sticker activity label-pos-4">Tennis</div>
+                <div class="label-sticker activity label-pos-5">Cycling</div>
+                <div class="label-sticker activity label-pos-6">Climbing</div>
+                <div class="label-sticker activity label-pos-7">Swimming</div>
+                <div class="label-sticker activity label-pos-8">Golf</div>
+                <div class="label-sticker activity label-pos-9">Skiing</div>
+                <div class="label-sticker activity label-pos-10">Dance</div>
+                <div class="label-sticker activity label-pos-11">Martial Arts</div>
+            </div>
+
+            <!-- Center: Draggable Contact Token -->
+            <div class="contact-token">
+                <span class="initials">JM</span>
+            </div>
+            <span class="drag-hint">Drag to label</span>
+        </div>
+
+        <!-- DETAIL ZONE -->
+        <div class="detail-zone">
+            <div class="card-carousel">
+                <!-- Previous contact (left) -->
+                <div class="side-card prev">
+                    <div class="avatar">MR</div>
+                    <span class="name">Mike R.</span>
+                    <span class="direction">Previous</span>
+                </div>
+
+                <!-- Current contact (center) -->
+                <div class="current-card">
+                    <div class="avatar-large">JM</div>
+                    <span class="contact-name">Jake Miller</span>
+                    <span class="last-contact">Last: 6 months ago</span>
+                    <div class="assigned-labels">
+                        <span class="label-chip activity">Hiking</span>
+                        <span class="label-chip activity">Tennis</span>
+                        <span class="label-chip social">Trivia</span>
+                    </div>
+                </div>
+
+                <!-- Next contact (right) -->
+                <div class="side-card next">
+                    <div class="avatar">SL</div>
+                    <span class="name">Sarah L.</span>
+                    <span class="direction">Next</span>
+                </div>
+            </div>
+
+            <div class="progress-bar">
+                <span class="progress-text">12 of 47 contacts</span>
+                <div class="progress-dots">
+                    <div class="dot completed"></div>
+                    <div class="dot completed"></div>
+                    <div class="dot completed"></div>
+                    <div class="dot current"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+            </div>
+
+            <div class="home-indicator"></div>
+        </div>
+    </div>
+
+    <div class="notes">
+        <h3>v2 Changes</h3>
+        <ul>
+            <li><strong>Domains as Segmented Control:</strong> 5 domain tabs above radial - symmetric, tappable, doesn't consume ring space</li>
+            <li><strong>Single-Ring Radial:</strong> Entire ring now dedicated to labels - fits 12 stickers comfortably</li>
+            <li><strong>More Label Density:</strong> Clock positions around full 360° - no domain icons competing for space</li>
+            <li><strong>Active Domain Indicator:</strong> Selected tab gets border highlight + domain color tints the radial zone</li>
+            <li><strong>Larger Stickers:</strong> With more room, labels can be 14pt text with generous padding (10px 16px)</li>
+        </ul>
+
+        <div class="comparison">
+            <div class="comparison-box">
+                <h4>Before (Two-Ring)</h4>
+                <p>Outer ring: 5 domain icons (asymmetric)<br>
+                Inner ring: ~8 labels<br>
+                Crowded, gesture targets overlap</p>
+            </div>
+            <div class="comparison-box new">
+                <h4>After (Single-Ring)</h4>
+                <p>Top bar: 5 domain tabs (symmetric)<br>
+                Full ring: 12 labels easily<br>
+                Clean separation of domain-switch vs label-assign</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
